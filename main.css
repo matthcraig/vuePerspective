@@ -69,8 +69,20 @@ button {
   outline: none;
   border: none;
   margin-right: 10px;
+  border-radius: 10px;
 }
 
 label{
   color: #fff;
+}
+
+button:hover {
+  background-color: rgb(148, 73, 135);
+  color:#8d81f3;
+  transition: all .2s ease-in-out;
+  transform: scale(1.1);
+}
+
+[v-cloak]{
+  display: none;
 }

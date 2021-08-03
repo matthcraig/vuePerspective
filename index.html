@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <div id="app">
+  <div id="app" v-cloak>
     <h2>Perspective Playground</h2>
     <main>
       <section class="settings">
@@ -24,9 +24,9 @@
           <label>rotateZ: {{ rotateZ }}deg; </label>
           <input type="range" min="-180" max="180" v-model="rotateZ" />
 
+    
           <button type="button" @click.prevent="reset">Reset</button>
-          <button type="button" @click.prevent="copy">Copy</button>
-        </div>
+          <button type="button" @click.prevent="copy">Copy</button>        
       </section>
       <section class="output">
         <div class="box-container">

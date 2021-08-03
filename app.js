@@ -4,7 +4,7 @@ data(){
     perspective: 100,
     rotateX: 0,
     rotateY: 0,
-    rotateZ: 0
+    rotateZ: 0,
   }
 },
 methods: {
@@ -15,10 +15,24 @@ methods: {
       this.rotateZ = 0
   },
   copy(){
+    const elmnt = document.createElement('textarea')
 
+    elmnt.setAttribute('readonly', '')
+    elmnt.style.position = 'absolute'
+    elmnt.style.left= '-9999px'
+    elmnt.value = `transform: ${this.box.transform}`
+
+    document.body.appendChild(elmnt)
+    elmnt.select()
+    document.execCommand('copy')
+
+    document.body.removeChild(elmnt)
   }
 },
 computed: {
+  hoverClasses(){
+    return { onHover: this.hovered }
+  },
   box(){
     return {
       transform: `
